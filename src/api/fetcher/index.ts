@@ -2,18 +2,18 @@ import {IFetcher} from './model'
 import {EHTTPMethods} from '../../constants/shared'
 
 class Fetcher implements IFetcher{
-    private headers: Headers = new Headers({
+    private headers: Record<string, string> = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest'
-    })
+    }
 
     addHeader(name: string, value: string): void {
-        this.headers.set(name, value)
+        this.headers[name] = value
     }
 
     deleteHeader(name: string): void {
-        this.headers.delete(name)
+        delete this.headers[name]
     }
 
     get<T>(url: string, body?: any): Promise<T> {
