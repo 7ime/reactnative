@@ -26,6 +26,11 @@ module.exports = {
             },
         ],
         'semi': ['error', 'never'],
+        'comma-dangle': 'off',
+        'no-trailing-spaces': ['error', {
+            'skipBlankLines': true,
+            'ignoreComments': true,
+        }],
         '@typescript-eslint/no-unused-vars': ['error', {'args': 'none'}],
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/no-empty-interface': 'off',
@@ -33,6 +38,13 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/ban-types': 'off',
+        '@typescript-eslint/interface-name-prefix': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/member-delimiter-style': ['error', {
+            "multiline": {
+                "delimiter": "none"
+            }
+        }],
         'react-hooks/exhaustive-deps': 'off',
         'react/display-name': 'off',
     }
