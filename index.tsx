@@ -1,5 +1,6 @@
+import 'react-native-gesture-handler'
 import React from 'react'
-
+import {NavigationContainer} from '@react-navigation/native'
 import {AppRegistry} from 'react-native'
 import {Provider} from 'react-redux'
 
@@ -14,7 +15,9 @@ sagaMiddleware.run(saga)
 
 const RN = () => (
     <Provider store={getAppStore()}>
-        <App/>
+        <NavigationContainer>
+            <App/>
+        </NavigationContainer>
     </Provider>
 )
 
