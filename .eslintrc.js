@@ -40,6 +40,7 @@ module.exports = {
         '@typescript-eslint/ban-types': 'off',
         '@typescript-eslint/interface-name-prefix': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/member-delimiter-style': ['error', {
             "multiline": {
                 "delimiter": "none"
