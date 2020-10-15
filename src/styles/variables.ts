@@ -6,6 +6,8 @@ export const FONTS = {
 }
 
 export const COLORS = {
+    white: '#ffffff',
+    black: '#000000',
     purple: '#6861CE',
     orange: '#F5B405',
     yellow: '#FFDB4D',
@@ -31,6 +33,9 @@ export const COLORS = {
     grey_light_20: '#F5F5F5',
     grey_light_10: '#F9FBFD',
 
+    get default() {
+        return this.grey_light_70
+    },
     get primary() {
         return this.blue
     },

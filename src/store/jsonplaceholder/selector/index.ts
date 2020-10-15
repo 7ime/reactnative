@@ -10,6 +10,11 @@ export const getPosts = createSelector(
     state => state.posts
 )
 
+export const getIsLoadingPosts = createSelector(
+    getState,
+    state => state.isLoadingPosts
+)
+
 export const getTotalCountOfPosts = createSelector(
     getPosts,
     (posts): number | null => {

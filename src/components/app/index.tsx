@@ -16,21 +16,19 @@ import {COLORS} from '../../styles/variables'
 
 const Stack = createStackNavigator<IRootStackParamList>()
 
-StatusBar.setBackgroundColor(COLORS.primary)
+StatusBar.setBackgroundColor(COLORS.white)
 
 const App = () => {
     const {t} = useTranslation()
 
     return (
         <>
-            <StatusBar barStyle="default"
+            <StatusBar barStyle="dark-content"
                        hidden={false}/>
             <SafeAreaView>
                 <ScrollView contentInsetAdjustmentBehavior="automatic">
                     <Text>{t(`${EI18nNameSpaces.welcome}:title`)}</Text>
                 </ScrollView>
-
-
             </SafeAreaView>
 
             <Stack.Navigator initialRouteName={EScreens.RestApi}>
