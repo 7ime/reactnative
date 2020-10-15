@@ -17,7 +17,7 @@ export default StyleSheet.create({
     text: {
         fontFamily: FONTS.os_regular,
         fontSize: 10,
-        backgroundColor: COLORS.green_light_50,
+        backgroundColor: COLORS.blue_light_20,
         padding: 8,
         borderRadius: 5
     }

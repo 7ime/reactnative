@@ -12,15 +12,19 @@ import HomeScreen from '../screens/home-screen'
 import RestApiScreen from '../screens/rest-api-screen'
 import {IRootStackParamList} from '../../navigation/stack-param-list'
 import {EScreens} from '../../navigation/screens'
+import {COLORS} from '../../styles/variables'
 
 const Stack = createStackNavigator<IRootStackParamList>()
+
+StatusBar.setBackgroundColor(COLORS.primary)
 
 const App = () => {
     const {t} = useTranslation()
 
     return (
         <>
-            <StatusBar barStyle="dark-content"/>
+            <StatusBar barStyle="default"
+                       hidden={false}/>
             <SafeAreaView>
                 <ScrollView contentInsetAdjustmentBehavior="automatic">
                     <Text>{t(`${EI18nNameSpaces.welcome}:title`)}</Text>

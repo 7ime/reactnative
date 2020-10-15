@@ -1,7 +1,7 @@
 import React from 'react'
 import {upperFirst} from 'lodash'
 import {
-    Text, View, ScrollView
+    Text, View, ScrollView, ActivityIndicator
 } from 'react-native'
 import {JsonPlaceholderAction, JsonPlaceholderSelector} from '../../../store/jsonplaceholder'
 import {useDispatch, useSelector} from 'react-redux'
@@ -9,6 +9,7 @@ import {Maybe} from '../../../toolbox/custom-types'
 import {IJsonPlaceholder} from '../../../entities/jsonplaceholder'
 import {globalStyles} from '../../../styles/global'
 import styles from './styles'
+import {COLORS} from '../../../styles/variables'
 
 const RestApiScreen = () => {
     const dispatch = useDispatch()
@@ -21,7 +22,7 @@ const RestApiScreen = () => {
 
     return (
         <View style={globalStyles.container}>
-            {!posts && <Text>Loading...</Text>}
+            {!posts && <ActivityIndicator size="small" color={COLORS.primary}/>}
             {
                 posts && (
                     <ScrollView style={styles.list}>
