@@ -1,14 +1,15 @@
 import React from 'react'
 import IButton from '../model'
-import {ActivityIndicator, GestureResponderEvent, TouchableHighlight, View, Text} from 'react-native'
+import {ActivityIndicator, GestureResponderEvent, TouchableHighlight, View, Text, StyleSheet} from 'react-native'
+import buttonStyles from '../styles/styles'
+import {COLORS} from '../../../../styles/variables'
 
 const Button = (props: IButton.Props) => {
     const {
         disabled,
         children,
         loading,
-        type = '',
-        shape = '',
+        type = 'default',
         accessible = true,
         accessibilityRole = 'button',
         accessibilityState = {
@@ -20,17 +21,31 @@ const Button = (props: IButton.Props) => {
         ...restProps
     } = props
 
-    const [pressInValue, setPressInValue] = React.useState(false)
+    const [pressedValue, setPressedValue] = React.useState(false)
 
     const handlePressIn = React.useCallback((event: GestureResponderEvent) => {
-        setPressInValue(true)
+        setPressedValue(true)
         onPressIn && onPressIn(event)
     }, [])
 
     const handlePressOut = React.useCallback((event: GestureResponderEvent) => {
-        setPressInValue(false)
+        setPressedValue(false)
         onPressOut && onPressOut(event)
     }, [])
+
+    const viewStyles = StyleSheet.flatten([
+        buttonStyles.view,
+        (buttonStyles as any)[`${type}View`],
+        disabled ? buttonStyles.disabled : null,
+        pressedValue ? buttonStyles.pressed : null,
+        loading ? buttonStyles.loadingView : null,
+    ])
+
+    const textStyles = StyleSheet.flatten([
+        buttonStyles.text,
+        (buttonStyles as any)[`${type}Text`],
+        loading ? buttonStyles.loadingText : null,
+    ])
 
     return (
         <TouchableHighlight
@@ -40,16 +55,19 @@ const Button = (props: IButton.Props) => {
             onPress={onPress}
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
+            underlayColor={COLORS.transparent}
             {...restProps}
         >
-            <View>
+            <View style={viewStyles}>
                 {loading && (
                     <ActivityIndicator
+                        color={COLORS.white}
                         animating
+                        style={buttonStyles.indicator}
                         size="small"
                     />
                 )}
-                <Text>{children}</Text>
+                <Text style={textStyles}>{children}</Text>
             </View>
         </TouchableHighlight>
     )

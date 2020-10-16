@@ -5,7 +5,13 @@ export const FONTS = {
     os_semi_bold: 'OpenSans-SemiBold',
 }
 
+
+export const SIZE = {
+    radius: 3
+}
+
 export const COLORS = {
+    transparent: 'transparent',
     white: '#ffffff',
     black: '#000000',
     purple: '#6861CE',

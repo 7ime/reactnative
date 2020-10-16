@@ -5,8 +5,7 @@ namespace IButton {
     export interface Props extends AccessibilityProps {
         children: React.ReactText
 
-        type?: 'primary' | 'secondary'
-        shape?: 'round'
+        type?: 'primary' | 'secondary' | 'default'
 
         loading?: boolean
         disabled?: boolean
