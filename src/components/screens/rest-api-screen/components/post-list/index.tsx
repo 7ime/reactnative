@@ -1,7 +1,7 @@
 import React from 'react'
 import {upperFirst} from 'lodash'
 import {
-    FlatList,
+    Animated,
     Text, View
 } from 'react-native'
 import styles from './styles'
@@ -29,12 +29,25 @@ interface IPropsPostList {
 }
 
 const PostList = (props: IPropsPostList) => {
+    const fadeAnim = React.useRef(new Animated.Value(0)).current
+
+    React.useEffect(() => {
+        Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 1000,
+            useNativeDriver: true
+        }).start()
+    }, [fadeAnim])
+
     return (
-        <FlatList data={props.posts}
+        <Animated.FlatList data={props.posts}
                   initialNumToRender={6}
                   renderItem={({item}) => <PostItem post={item}/>}
                   keyExtractor={item => String(item.id)}
-                  style={styles.list}/>
+                  style={{
+                      ...styles.list,
+                      opacity: fadeAnim
+                  }}/>
     )
 }
 
