@@ -1,6 +1,13 @@
 import React from 'react'
 import IButton from '../model'
-import {ActivityIndicator, GestureResponderEvent, TouchableHighlight, View, Text, StyleSheet} from 'react-native'
+import {
+    ActivityIndicator,
+    GestureResponderEvent,
+    View,
+    Text,
+    StyleSheet,
+    TouchableWithoutFeedback
+} from 'react-native'
 import buttonStyles from '../styles/styles'
 import {COLORS} from '../../../../styles/variables'
 
@@ -48,14 +55,13 @@ const Button = (props: IButton.Props) => {
     ])
 
     return (
-        <TouchableHighlight
+        <TouchableWithoutFeedback
             accessible={accessible}
             accessibilityRole={accessibilityRole}
             accessibilityState={accessibilityState}
             onPress={onPress}
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
-            underlayColor={COLORS.transparent}
             {...restProps}
         >
             <View style={viewStyles}>
@@ -69,7 +75,7 @@ const Button = (props: IButton.Props) => {
                 )}
                 <Text style={textStyles}>{children}</Text>
             </View>
-        </TouchableHighlight>
+        </TouchableWithoutFeedback>
     )
 }
 
