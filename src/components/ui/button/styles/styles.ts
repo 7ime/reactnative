@@ -10,7 +10,7 @@ const buttonStyles = StyleSheet.create({
         minHeight: 50
     },
     pressed: {
-        opacity: 0.5
+        opacity: 0.9
     },
     disabled: {
         opacity: 0.5

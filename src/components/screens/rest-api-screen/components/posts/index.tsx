@@ -13,7 +13,7 @@ import PostList from '../post-list'
 const Posts = () => {
     const dispatch = useDispatch()
 
-    const posts: Maybe<IJsonPlaceholder.Model[]> = useSelector(JsonPlaceholderSelector.makeGetCertainNumberOfPosts(10))
+    const posts: Maybe<IJsonPlaceholder.Model[]> = useSelector(JsonPlaceholderSelector.makeGetCertainNumberOfPosts(100))
     const isLoadingPosts: boolean = useSelector(JsonPlaceholderSelector.getIsLoadingPosts)
 
     const handlePressLoadPosts = React.useCallback(() => {

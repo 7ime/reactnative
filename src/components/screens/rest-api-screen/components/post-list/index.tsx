@@ -1,33 +1,40 @@
 import React from 'react'
 import {upperFirst} from 'lodash'
 import {
-    Text, View, ScrollView
+    FlatList,
+    Text, View
 } from 'react-native'
 import styles from './styles'
 import {IJsonPlaceholder} from '../../../../../entities/jsonplaceholder'
 
-interface IProps {
-    posts: IJsonPlaceholder.Model[]
+interface IPropsPostItem {
+    post: IJsonPlaceholder.Model
 }
 
-const PostList = (props: IProps) => {
+const PostItem = (props: IPropsPostItem) => {
     const {
-        posts
+        post
     } = props
 
     return (
-        <ScrollView style={styles.list}>
-            {
-                posts.map(({id, title, body}) => {
-                    return (
-                        <View key={id} style={styles.item}>
-                            <Text numberOfLines={1} style={styles.title}>{title}</Text>
-                            <Text numberOfLines={3} style={styles.text}>{upperFirst(body)}</Text>
-                        </View>
-                    )
-                })
-            }
-        </ScrollView>
+        <View style={styles.item}>
+            <Text numberOfLines={1} style={styles.title}>{post.title}</Text>
+            <Text numberOfLines={3} style={styles.text}>{upperFirst(post.body)}</Text>
+        </View>
+    )
+}
+
+interface IPropsPostList {
+    posts: IJsonPlaceholder.Model[]
+}
+
+const PostList = (props: IPropsPostList) => {
+    return (
+        <FlatList data={props.posts}
+                  initialNumToRender={6}
+                  renderItem={({item}) => <PostItem post={item}/>}
+                  keyExtractor={item => String(item.id)}
+                  style={styles.list}/>
     )
 }
 
