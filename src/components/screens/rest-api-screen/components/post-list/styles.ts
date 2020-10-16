@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native'
-import {COLORS, FONTS} from '../../../styles/variables'
+import {COLORS, FONTS} from '../../../../../styles/variables'
 
 export default StyleSheet.create({
     list: {
@@ -22,5 +22,3 @@ export default StyleSheet.create({
         borderRadius: 5
     }
 })
-
-
