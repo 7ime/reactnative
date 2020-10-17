@@ -5,11 +5,11 @@ import {
 import {createStackNavigator} from '@react-navigation/stack'
 import HomeScreen from '../screens/home-screen'
 import RestApiScreen from '../screens/rest-api-screen'
-import {IRootStackParamList} from '../../navigation/stack-param-list'
-import {EScreens} from '../../navigation/screens'
+import {ERootScreens} from '../../navigation/screens'
 import {COLORS} from '../../styles/variables'
+import {INavigation} from '../../navigation/model'
 
-const Stack = createStackNavigator<IRootStackParamList>()
+const Stack = createStackNavigator<INavigation.RootStackParamList>()
 
 StatusBar.setBackgroundColor(COLORS.white)
 
@@ -18,9 +18,9 @@ const App = () => {
         <>
             <StatusBar barStyle="dark-content"
                        hidden={false}/>
-            <Stack.Navigator initialRouteName={EScreens.RestApi}>
-                <Stack.Screen name={EScreens.Home} component={HomeScreen} options={{title: 'Home'}}/>
-                <Stack.Screen name={EScreens.RestApi} component={RestApiScreen} options={{title: 'Rest Api'}}/>
+            <Stack.Navigator initialRouteName={ERootScreens.Home}>
+                <Stack.Screen name={ERootScreens.Home} component={HomeScreen} options={{title: 'Home'}}/>
+                <Stack.Screen name={ERootScreens.RestApi} component={RestApiScreen} options={{title: 'Rest Api'}}/>
             </Stack.Navigator>
         </>
     )

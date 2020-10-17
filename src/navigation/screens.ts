@@ -1,4 +1,4 @@
-export enum EScreens {
+export enum ERootScreens {
     Home = 'Home',
     RestApi = 'RestApi',
 }

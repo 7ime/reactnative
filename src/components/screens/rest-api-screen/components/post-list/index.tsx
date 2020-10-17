@@ -41,13 +41,13 @@ const PostList = (props: IPropsPostList) => {
 
     return (
         <Animated.FlatList data={props.posts}
-                  initialNumToRender={6}
-                  renderItem={({item}) => <PostItem post={item}/>}
-                  keyExtractor={item => String(item.id)}
-                  style={{
-                      ...styles.list,
-                      opacity: fadeAnim
-                  }}/>
+                           initialNumToRender={6}
+                           renderItem={({item}) => <PostItem post={item}/>}
+                           keyExtractor={item => String(item.id)}
+                           style={{
+                               ...styles.list,
+                               opacity: fadeAnim
+                           }}/>
     )
 }
 

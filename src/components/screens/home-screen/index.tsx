@@ -1,13 +1,12 @@
 import React from 'react'
 import {
-    Text,
-    Button
+    Text
 } from 'react-native'
-import {StackScreenProps} from '@react-navigation/stack'
-import {IRootStackParamList} from '../../../navigation/stack-param-list'
-import {EScreens} from '../../../navigation/screens'
+import {ERootScreens} from '../../../navigation/screens'
+import {INavigation} from '../../../navigation/model'
+import Button from '../../ui/button/components'
 
-interface IProps extends StackScreenProps<IRootStackParamList, EScreens.Home> {
+interface IProps extends INavigation.RootProps<ERootScreens.Home> {
 
 }
 
@@ -16,12 +15,8 @@ const HomeScreen = ({navigation}: IProps) => {
         <>
             <Text>Home Screen</Text>
 
-            <Button
-                title="Go to Rest Api Screen"
-                onPress={() => navigation.navigate(EScreens.RestApi)}
-            />
+            <Button type={'primary'} onPress={() => navigation.navigate(ERootScreens.RestApi)}>Go to Rest Api Screen</Button>
         </>
-
     )
 }
 
