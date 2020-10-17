@@ -18,7 +18,9 @@ const App = () => {
         <>
             <StatusBar barStyle="dark-content"
                        hidden={false}/>
-            <Stack.Navigator initialRouteName={ERootScreens.Home}>
+            <Stack.Navigator initialRouteName={ERootScreens.Home} screenOptions={{
+                headerShown: false
+            }}>
                 <Stack.Screen name={ERootScreens.Home} component={HomeScreen} options={{title: 'Home'}}/>
                 <Stack.Screen name={ERootScreens.RestApi} component={RestApiScreen} options={{title: 'Rest Api'}}/>
             </Stack.Navigator>
