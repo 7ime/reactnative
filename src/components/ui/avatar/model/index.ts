@@ -4,7 +4,7 @@ namespace IAvatar {
     export type Initials = [string, string?]
 
     export interface Props extends AccessibilityProps {
-        imageUrl?: string
+        imageUri?: string
         name?: string
     }
 }

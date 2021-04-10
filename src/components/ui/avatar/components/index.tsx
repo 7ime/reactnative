@@ -7,13 +7,19 @@ import AvatarStyles from '../styles/avatar.styles'
 
 const Avatar = (props: IAvatar.Props) => {
     const {
-        imageUrl,
+        imageUri,
         name,
         ...restProps
     } = props
 
-    if (imageUrl) {
-        return <AvatarStyles.Avatar />
+    if (imageUri) {
+        return (
+            <AvatarStyles.Avatar>
+                <AvatarStyles.Image source={{
+                    uri: imageUri
+                }} />
+            </AvatarStyles.Avatar>
+        )
     }
 
     const [firstInitial, secondInitial] = getAvatarInitials(name || '', [DEFAULT_AVATAR_INITIAL])
