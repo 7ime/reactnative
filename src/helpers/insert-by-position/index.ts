@@ -1,5 +1,5 @@
-import {isNumber} from '../is-number'
 import {EPosition} from '../../constants/shared'
+import {isNumber} from '../numbers/is-number'
 
 export const insertByPosition = (arr: number[], id: number, anchor?: number, position?: EPosition) => {
     if (isNumber(anchor) && position) {

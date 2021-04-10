@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-const StyledText = styled.Text`
+const Text = styled.Text`
   font-family: ${({ theme }) => theme.font.family.os_regular};
   font-weight: ${({ theme }) => theme.font.weight.regular};
   font-size: ${({ theme }) => theme.font.size.default}px;
@@ -8,7 +8,7 @@ const StyledText = styled.Text`
 `
 
 const TypographyStyles = {
-    StyledText
+    Text
 }
 
 export default TypographyStyles

@@ -1,6 +1,6 @@
 import React from 'react'
 import ITypography from '../../model'
-import TypographyStyles from '../../styles'
+import TypographyStyles from '../../styles/typography.styles'
 
 const Text: React.FC<ITypography.TextProps> = (props) => {
     const {
@@ -8,7 +8,7 @@ const Text: React.FC<ITypography.TextProps> = (props) => {
         ...restProps
     } = props
 
-    return <TypographyStyles.StyledText {...restProps}>{children}</TypographyStyles.StyledText>
+    return <TypographyStyles.Text {...restProps}>{children}</TypographyStyles.Text>
 }
 
 export default Text
