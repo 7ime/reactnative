@@ -11,6 +11,8 @@ import {
 import buttonStyles from '../styles/styles'
 import {COLORS} from '../../../../styles/variables'
 
+// TODO: need to add TouchableNativeFeedback for android devices
+
 const Button = (props: IButton.Props) => {
     const {
         disabled,
