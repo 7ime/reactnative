@@ -53,6 +53,7 @@ const HomeScreen = ({navigation}: IProps) => {
             </StyledRow>
 
             <Button type={'primary'} onPress={() => navigation.navigate(ERootScreens.RestApi)}>Go to Rest Api Screen</Button>
+            <Button type={'primary'} onPress={() => navigation.navigate(ERootScreens.ExampleCarousel)}>Go to Example Carousel</Button>
         </>
     )
 }

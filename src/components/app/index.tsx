@@ -9,6 +9,7 @@ import {ERootScreens} from '../../navigation/screens'
 import {COLORS} from '../../styles/variables'
 import {INavigation} from '../../navigation/model'
 import {StackHeaderProps} from '@react-navigation/stack/lib/typescript/src/types'
+import ExampleCarouselScreen from '../screens/example-carousel-screen'
 
 const Stack = createStackNavigator<INavigation.RootStackParamList>()
 
@@ -27,6 +28,7 @@ const App = () => {
             }}>
                 <Stack.Screen name={ERootScreens.Home} component={HomeScreen} options={{title: 'Home'}}/>
                 <Stack.Screen name={ERootScreens.RestApi} component={RestApiScreen} options={{title: 'Rest Api'}}/>
+                <Stack.Screen name={ERootScreens.ExampleCarousel} component={ExampleCarouselScreen} options={{title: 'Example Carousel'}}/>
             </Stack.Navigator>
         </>
     )
