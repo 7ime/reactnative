@@ -285,7 +285,7 @@ const Item = ({ imageUri, heading, description, index, scrollX }: any) => {
     )
 }
 
-const Pagination = ({ scrollX }: any) => {
+const Pagination = ({ scrollX }: { scrollX: Animated.Value}) => {
     const inputRange = [-width, 0, width]
     const translateX = scrollX.interpolate({
         inputRange,
@@ -323,6 +323,12 @@ interface IProps extends INavigation.RootProps<ERootScreens.ExampleCarousel> {
 
 const ExampleCarouselScreen = () => {
     const scrollX = React.useRef(new Animated.Value(0)).current
+
+    React.useEffect(() => {
+        scrollX.addListener(({ value }) => {
+            console.log(value)
+        })
+    }, [])
 
     return (
         <View style={styles.container}>

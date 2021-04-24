@@ -54,6 +54,7 @@ const HomeScreen = ({navigation}: IProps) => {
 
             <Button type={'primary'} onPress={() => navigation.navigate(ERootScreens.RestApi)}>Go to Rest Api Screen</Button>
             <Button type={'primary'} onPress={() => navigation.navigate(ERootScreens.ExampleCarousel)}>Go to Example Carousel</Button>
+            <Button type={'primary'} onPress={() => navigation.navigate(ERootScreens.Examples)}>Go to Examples</Button>
         </>
     )
 }

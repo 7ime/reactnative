@@ -6,6 +6,7 @@ export namespace INavigation {
         [ERootScreens.Home]: undefined
         [ERootScreens.RestApi]: undefined
         [ERootScreens.ExampleCarousel]: undefined
+        [ERootScreens.Examples]: undefined
     }
 
     export type RootProps<T extends ERootScreens> = StackScreenProps<RootStackParamList, T>
