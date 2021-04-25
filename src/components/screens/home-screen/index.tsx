@@ -1,4 +1,5 @@
 import React from 'react'
+import Bell from '../../../assets/images/icons/bell.svg'
 import styled from 'styled-components/native'
 import {
     Text, useWindowDimensions
@@ -35,7 +36,7 @@ const HomeScreen = ({navigation}: IProps) => {
     return (
         <>
             <Text>Home Screen</Text>
-
+            <Bell width={44} height={36} fill={'blue'} />
             <StyledRow>
                 <StyledCol>
                     <StyledDimsInfo>

@@ -21,6 +21,7 @@
         "react": "^17.0.2",
         "react-i18next": "^11.8.12",
         "react-native": "0.64.0",
+        "react-native-fast-image": "^8.3.4",
         "react-native-gesture-handler": "^1.10.3",
         "react-native-locale-detector": "^1.0.1",
         "react-native-reanimated": "^2.1.0",
@@ -52,6 +53,8 @@
         "metro-react-native-babel-preset": "^0.64.0",
         "nock": "^13.0.11",
         "node-fetch": "^2.6.1",
+        "react-native-svg": "^12.1.1",
+        "react-native-svg-transformer": "^0.14.3",
         "react-test-renderer": "17.0.1",
         "redux-saga-test-plan": "^4.0.1",
         "typescript": "^3.8.3"
